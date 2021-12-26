@@ -1,8 +1,12 @@
+/* 
+Test:
+I/P - ABC O/P - ABC ACB BAC BCA CBA CAB
+*/
+
 import java.util.*;
 
 public class App {
     static List<String> res = new ArrayList<>();
-
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -25,6 +29,7 @@ public class App {
             res.add(asf);
             return;
         }
+        
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             String left = s.substring(0, i);

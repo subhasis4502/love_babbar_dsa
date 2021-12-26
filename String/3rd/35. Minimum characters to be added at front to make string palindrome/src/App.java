@@ -1,4 +1,10 @@
-/* Ref: https://www.youtube.com/watch?v=IP4iqrh0mQk */
+/* Ref: https://www.youtube.com/watch?v=IP4iqrh0mQk, https://www.youtube.com/watch?v=RiNzHfoA2Lo */
+
+/* 
+Test:
+I/P - abbcabda
+O/P - We have to add 3 number to make it palindrome
+*/
 
 import java.util.Scanner;
 
@@ -22,12 +28,12 @@ public class App {
                     if (str.charAt(si) == str.charAt(ei))
                         dp[si][ei] = dp[si + 1][ei - 1] + 2;
                     else
-                        dp[si][ei] = Math.max(dp[si + 1][ei], dp[si][ei - 1]);
+                        dp[si][ei] = Math.max(dp[si + 1][ei], dp[si][ei - 1]); // Max of suffix and prefix
                 }
             }
         }
 
-        int ans = n - dp[0][dp.length - 1];
+        int ans = n - dp[0][dp.length - 1]; // string.lenght() - longestPalindromicSubsequence
         System.out.println("We have to add " + ans + " number to make it palindrome");
     }
 }

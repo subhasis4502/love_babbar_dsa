@@ -1,3 +1,17 @@
+/* Ref: https://www.youtube.com/watch?v=ZYeVllg0D7E */
+
+/* 
+Test:
+I/P - MAGIC
+      BBABBM
+      CBMBBA
+      IBABBG
+      GOZBBI
+      ABBBBC
+      MCIGAM
+O/P - MAGIC appeared for 3 times.
+*/
+
 import java.util.Scanner;
 
 public class App {

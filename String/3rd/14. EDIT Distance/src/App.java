@@ -1,5 +1,11 @@
 /* Ref: https://www.youtube.com/watch?v=tooMn-xfYCU */
 
+/* 
+Test:
+I/P - geek gesek O/P - 1
+I/P - gfg gfg O/P - 0
+*/
+
 import java.util.Scanner;
 
 public class App {

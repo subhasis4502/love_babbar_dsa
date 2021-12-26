@@ -1,3 +1,19 @@
+/* Ref: https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/ */
+
+/* 
+Test:
+I/P - 3 13
+GEEKSFORGEEKS
+GEEKSQUIZGEEK
+IDEQAPRACTICE
+GEEKS
+
+O/P - 
+Pattern found at 0, 0
+Pattern found at 0, 8
+Pattern found at 1, 0
+*/
+
 import java.util.*;
 
 public class App {
@@ -16,19 +32,15 @@ public class App {
         sc.close();
     }
 
-    static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 }; // upper left,up,upper right, left,right,lower left down ,lower right;
+    // All 8 direction co-ordinates
+    static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
     static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
     public static void searchWord(char[][] grid, String word) {
-        ArrayList<int[]> a = new ArrayList<>();
         for (int i = 0; i < grid.length; i++)
             for (int j = 0; j < grid[0].length; j++)
                 if (check(i, j, grid, word))
-                    a.add(new int[] { i, j });
-
-        a.forEach((n) -> {
-            System.out.println(n[0] + " " + n[1]);
-        });
+                    System.out.println("Pattern found at " + i + ", " + j);
     }
 
     static boolean check(int i, int j, char grid[][], String word) {

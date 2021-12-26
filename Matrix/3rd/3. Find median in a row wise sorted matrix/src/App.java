@@ -1,3 +1,15 @@
+/* Ref: https://www.youtube.com/watch?v=tFdBRcHLSGQ */
+
+/* 
+Test:
+I/P - 3 3
+      1 3 5
+      2 6 9
+      3 6 9
+
+O/P - The median is 5
+*/
+
 import java.util.Scanner;
 
 public class App {
@@ -19,6 +31,7 @@ public class App {
 
     private static void median(int[][] mat, int row, int col) {
         int startVal = 0, endVal = 2000, midVal;
+
         int n = row*col;
         while(startVal <= endVal){
             midVal = (endVal+startVal)/2;

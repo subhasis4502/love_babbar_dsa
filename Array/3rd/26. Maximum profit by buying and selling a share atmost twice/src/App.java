@@ -27,7 +27,7 @@ public class App {
             leastsf = Math.min(arr[i], leastsf);
             pist = arr[i] - leastsf;
             
-            dpl[i] = (pist > dpl[i-1]) ? pist : dpl[i-1];
+            dpl[i] = Math.max(pist, dpl[i-1]);
         }
 
         int pibt = 0; // Profit if bought today
@@ -38,7 +38,7 @@ public class App {
             maxat = Math.max(maxat, arr[i]);
             pibt = maxat - arr[i];
 
-            dpr[i] = (pibt > dpr[i+1]) ? pibt : dpr[i+1];
+            dpr[i] = Math.max(pibt, dpr[i+1]);
         }
 
         int res = 0;

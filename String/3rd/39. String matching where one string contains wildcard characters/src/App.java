@@ -1,5 +1,14 @@
 /* Ref: https://www.youtube.com/watch?v=NbgUZAoIz3g */
 
+/* 
+Test:
+I/P - 
+baaabab
+ba*a?
+
+O/P - Matched
+*/
+
 import java.util.Scanner;
 
 public class App {
@@ -42,7 +51,5 @@ public class App {
             System.out.println("Mathched");
         else
             System.out.println("Not Mathched");
-
     }
-
 }

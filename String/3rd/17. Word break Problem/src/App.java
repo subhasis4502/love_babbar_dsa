@@ -1,5 +1,13 @@
 /* Ref: https://www.youtube.com/watch?v=2NaaM_z_Jig&t=204s */
 
+/* 
+Test:
+I/P - 12
+      i like sam sung samsung mobile ice cream icecream man go mango
+      ilike  
+O/P - 1
+*/
+
 import java.util.*;
 
 public class App {

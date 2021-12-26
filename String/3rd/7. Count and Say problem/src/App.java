@@ -1,3 +1,9 @@
+/* 
+Test:
+I/P - 5 O/P - 111221
+I/P - 2 O/P - 11
+*/
+
 import java.util.Scanner;
 
 public class App {
@@ -15,18 +21,18 @@ public class App {
             return "11";
         String s = "11";
         for(int i = 3; i<=n; i++){
-            String t = "";
+            String ans = "";
             s += "&";
-            int c = 1;
+            int count = 1;
             for(int j = 1; j<s.length(); j++){
                 if(s.charAt(j) != s.charAt(j-1)){
-                    t += Integer.toString(c)+s.charAt(j-1);
-                    c = 1;
+                    ans += Integer.toString(count)+s.charAt(j-1);
+                    count = 1;
                 }
                 else
-                    c++;
+                    count++;
             }
-            s = t;
+            s = ans;
         }
         return s;
     }

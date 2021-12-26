@@ -1,3 +1,20 @@
+/* Ref: https://www.youtube.com/watch?v=oaN9ibZKMpA, https://www.youtube.com/watch?v=0do2734xhnU */
+
+/* 
+Test:
+I/P - 
+6 5
+1 1 0 1 1
+1 1 1 1 1
+0 1 1 1 1
+1 1 1 1 1
+1 0 1 1 1
+1 1 1 1 1
+
+O/P - 
+Maximum size of the rectangle: 15
+*/
+
 import java.util.*;
 
 public class App {
@@ -18,10 +35,7 @@ public class App {
     }
 
     private static void maxSizeRectangle(int[][] mat, int row, int col) {
-        int[] arr = new int[col];
-        for (int i = 0; i < col; i++)
-            arr[i] = mat[0][i];
-        
+        int[] arr = mat[0];
         int ans = 0;
         ans = Math.max(ans, maxAreaOfHistogram(arr));
         for(int i = 1; i < row; i++){
@@ -37,19 +51,43 @@ public class App {
     }
 
     public static int maxAreaOfHistogram(int[] arr) {
-        Stack<Integer> st = new Stack<>();
-        st.push(-1);
-        int area = 0;
-        for (int i = 0; i <= arr.length; i++) {
-            int val = (i == arr.length) ? 0 : arr[i];
-            while (st.peek() != -1 && val <= arr[st.peek()]) {
-                int rb = i;
-                int currVal = arr[st.pop()];
-                int lb = st.peek();
-                area = Math.max(area, currVal * (rb - lb - 1));
-            }
-            st.push(i);
+        int[] lsi = new int[arr.length]; // Left smaller element index
+        Stack<Integer> stl = new Stack<>();
+        stl.push(0);
+        lsi[0] = -1;
+
+        for (int i = 1; i < arr.length; i++) {
+            while(stl.size() > 0 && arr[i] < arr[stl.peek()])
+                stl.pop();
+            if(stl.size() == 0)
+                lsi[i] = -1;
+            else
+                lsi[i] = stl.peek();
+            
+            stl.push(i);
         }
-        return area;
+
+        int[] rsi = new int[arr.length]; // Right smaller element index 
+        Stack<Integer> str = new Stack<>();
+        str.push(arr.length-1);
+        rsi[arr.length-1] = arr.length;
+
+        for (int i = arr.length-2; i >= 0; i--) {
+            while(str.size() > 0 && arr[i] < arr[str.peek()])
+                str.pop();
+            if(str.size() == 0)
+                rsi[i] = arr.length;
+            else
+                rsi[i] = str.peek();
+            
+            str.push(i);
+        }
+
+        int maxArea = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int area = (rsi[i]-lsi[i]-1)*arr[i];
+            maxArea = Math.max(maxArea, area);
+        }
+        return maxArea;
     }
 }

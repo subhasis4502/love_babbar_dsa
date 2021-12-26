@@ -1,3 +1,13 @@
+/* Ref: https://www.youtube.com/watch?v=e1HlptlipB0 */
+
+/* 
+Test:
+I/P - AABBBCBBAC
+O/P - Smallest window: BAC
+I/P - aaab
+O/P - Smallest window: ab
+*/
+
 import java.util.*;
 
 public class App {
@@ -9,6 +19,7 @@ public class App {
     }
 
     public static void findSubString(String str) {
+
         Set<Character> unique = new HashSet<>();
         int len = Integer.MAX_VALUE;
 
@@ -48,7 +59,7 @@ public class App {
                 f2 = true;
             }
 
-            if (f1 == false && f2 == false)
+            if (!f1 && !f2)
                 break;
         }
         System.out.println("Smallest window: " + res);

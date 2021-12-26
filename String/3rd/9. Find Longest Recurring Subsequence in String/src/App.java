@@ -1,5 +1,11 @@
 /* Ref: https://www.youtube.com/watch?v=UQiZmkVwARg */
 
+/* 
+Test:
+I/P - aabb O/P - 2
+I/P - axxxy O/P - 2
+*/
+
 import java.util.Scanner;
 
 public class App {

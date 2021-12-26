@@ -6,8 +6,8 @@ public class App {
         int max_val = Integer.MIN_VALUE;
 
         for(int i : arr){
-            if(i < min_val) min_val = i;
-            if(i > max_val) max_val = i;
+            min_val = Math.min(i, min_val);
+            max_val = Math.max(i, max_val);
         }
         System.out.println("Min value: " + min_val);
         System.out.println("Max value: " + max_val);

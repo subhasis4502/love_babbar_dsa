@@ -1,3 +1,12 @@
+/* Ref: https://www.youtube.com/watch?v=1ZGJzvkcLsA */
+
+/* 
+Test:
+I/P - 4 4
+      0 1 1 1 0 0 1 1 1 1 1 1 0 0 0 0 
+O/P - 2
+*/
+
 import java.util.Scanner;
 
 public class App {
