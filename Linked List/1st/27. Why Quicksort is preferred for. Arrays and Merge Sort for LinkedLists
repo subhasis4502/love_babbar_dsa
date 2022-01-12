@@ -1,0 +1,16 @@
+For Array:
+Quick sort ->
+* No Extra space required
+* It has a cache friendly sorting algorithm
+* Tail recursive optimization can be implemented
+
+Not merge sort ->
+* Require extra space
+
+For Linked List:
+Merge sort ->
+* We don't need to use any extra space
+* It access data seqentially
+
+Not Quick sort ->
+* Cannot random access element

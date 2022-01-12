@@ -1,5 +1,13 @@
 /* Ref: https://www.youtube.com/watch?v=Ke8TPhHdHMw */
 
+/* 
+Input:
+abc
+
+Output:
+c b bc a ac ab abc
+*/
+
 import java.util.Scanner;
 
 public class App {

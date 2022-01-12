@@ -1,4 +1,4 @@
-/* Ref: https://www.youtube.com/watch?v=uojx--MK_n0&t=267s */
+/* Ref: https://www.youtube.com/watch?v=uojx--MK_n0 */
 
 import java.util.Scanner;
 

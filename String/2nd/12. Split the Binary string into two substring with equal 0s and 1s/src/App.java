@@ -1,3 +1,13 @@
+/* Ref: https://www.youtube.com/watch?v=svMdY6wlQ6I */
+
+/* 
+Input:
+0100110101
+
+Output:
+The number of substrings: 4
+*/
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -17,19 +27,18 @@ public class App {
         hash.put(0, 1);
 
         for (char c : str.toCharArray()) {
-            if(c == '0')
+            if (c == '0')
                 sum -= 1;
             else
                 sum += 1;
-            
-            if(hash.containsKey(sum)){
-                count ++;
-                hash.put(sum, hash.get(sum)+1);
-            }
-            else
+
+            if (hash.containsKey(sum)) {
+                count++;
+                hash.put(sum, hash.get(sum) + 1);
+            } else
                 hash.put(sum, 1);
         }
-        
-        System.out.println("The number of substrings: " + count/2);
+
+        System.out.println("The number of substrings: " + count / 2);
     }
 }

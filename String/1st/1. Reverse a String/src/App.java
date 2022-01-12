@@ -1,3 +1,11 @@
+/* 
+Input:
+hello
+
+Output:
+olleh
+*/
+
 import java.util.Scanner;
 
 public class App {

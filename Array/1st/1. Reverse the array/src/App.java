@@ -7,14 +7,16 @@ public class App {
         int i = 0;
         int j = str.length-1;
         while(i < j){
-            char temp = str[i];
-            str[i] = str[j];
-            str[j] = temp;
-
+            swap(str, i, j);
             i++;
             j--;
         }
         return String.valueOf(str);
+    }
+    private static void swap(char[] str, int i, int j) {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
     }
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
